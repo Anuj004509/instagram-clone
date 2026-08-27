@@ -13,3 +13,29 @@ likeButtons.forEach(function (button) {
 
     });
 });
+
+const commentBoxes = document.querySelectorAll(".comment-box");
+
+commentBoxes.forEach(function (box) {
+
+    const input = box.querySelector("input");
+    const postButton = box.querySelector("button");
+
+    postButton.addEventListener("click", function () {
+
+        const comment = input.value.trim();
+
+        if (comment === "") {
+            return;
+        }
+
+        const commentText = document.createElement("p");
+
+        commentText.innerHTML = "<strong>You</strong> " + comment;
+
+        box.before(commentText);
+
+        input.value = "";
+    });
+
+});

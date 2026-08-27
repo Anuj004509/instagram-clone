@@ -127,3 +127,24 @@ main {
 .post>p {
     padding: 0 12px 12px;
 }
+
+.comment-box {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #eee;
+}
+
+.comment-box input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 8px;
+}
+
+.comment-box button {
+    border: none;
+    background: none;
+    color: #0095f6;
+    font-weight: bold;
+    cursor: pointer;
+}
