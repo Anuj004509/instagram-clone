@@ -39,3 +39,21 @@ commentBoxes.forEach(function (box) {
     });
 
 });
+
+const followButtons = document.querySelectorAll(".follow-btn");
+
+followButtons.forEach(function (button) {
+
+    button.addEventListener("click", function () {
+
+        if (button.classList.contains("following")) {
+            button.innerHTML = "Follow";
+            button.classList.remove("following");
+        } else {
+            button.innerHTML = "Following";
+            button.classList.add("following");
+        }
+
+    });
+
+});

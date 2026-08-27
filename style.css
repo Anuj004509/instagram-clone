@@ -148,3 +148,16 @@ main {
     font-weight: bold;
     cursor: pointer;
 }
+
+.follow-btn {
+    margin-left: auto;
+    border: none;
+    background: none;
+    color: #0095f6;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.follow-btn.following {
+    color: #555;
+}
