@@ -77,23 +77,17 @@ searchInput.addEventListener("input", function () {
 });
 
 const stories = document.querySelectorAll(".story-image");
-const storyViewer = document.querySelector("#storyViewer");
-const storyImage = document.querySelector("#storyImage");
-const closeStory = document.querySelector("#closeStory");
+const storyViewer = document.getElementById("storyViewer");
+const storyImage = document.getElementById("storyImage");
+const closeStory = document.getElementById("closeStory");
 
-stories.forEach(function (story) {
-
-    story.addEventListener("click", function () {
-
-        storyImage.src = story.src;
+stories.forEach(function(story) {
+    story.addEventListener("click", function() {
         storyViewer.style.display = "flex";
-
+        storyImage.src = story.src;
     });
-
 });
 
-closeStory.addEventListener("click", function () {
-
+closeStory.addEventListener("click", function() {
     storyViewer.style.display = "none";
-
 });
