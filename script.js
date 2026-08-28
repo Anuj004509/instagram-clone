@@ -75,3 +75,25 @@ searchInput.addEventListener("input", function () {
         }
     });
 });
+
+const stories = document.querySelectorAll(".story-image");
+const storyViewer = document.querySelector("#storyViewer");
+const storyImage = document.querySelector("#storyImage");
+const closeStory = document.querySelector("#closeStory");
+
+stories.forEach(function (story) {
+
+    story.addEventListener("click", function () {
+
+        storyImage.src = story.src;
+        storyViewer.style.display = "flex";
+
+    });
+
+});
+
+closeStory.addEventListener("click", function () {
+
+    storyViewer.style.display = "none";
+
+});
