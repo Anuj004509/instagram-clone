@@ -57,3 +57,21 @@ followButtons.forEach(function (button) {
     });
 
 });
+
+const searchInput = document.querySelector(".search-input");
+
+searchInput.addEventListener("input", function () {
+    const searchText = searchInput.value.toLowerCase();
+
+    const posts = document.querySelectorAll(".post");
+
+    posts.forEach(function (post) {
+        const username = post.querySelector("h3").innerText.toLowerCase();
+
+        if (username.includes(searchText)) {
+            post.style.display = "block";
+        } else {
+            post.style.display = "none";
+        }
+    });
+});
