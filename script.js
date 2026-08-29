@@ -16,6 +16,8 @@ likeButtons.forEach(function (button) {
 
 const commentBoxes = document.querySelectorAll(".comment-box");
 
+
+
 commentBoxes.forEach(function (box) {
 
     const input = box.querySelector("input");
@@ -30,6 +32,34 @@ commentBoxes.forEach(function (box) {
         }
 
         const commentText = document.createElement("p");
+
+        commentText.innerHTML = "<strong>You</strong> " + comment;
+
+        box.before(commentText);
+
+        input.value = "";
+    });
+
+});
+
+const reelCommentBoxes = document.querySelectorAll(".reel-comment-box");
+
+reelCommentBoxes.forEach(function (box) {
+
+    const input = box.querySelector("input");
+    const postButton = box.querySelector("button");
+
+    postButton.addEventListener("click", function () {
+
+        const comment = input.value.trim();
+
+        if (comment === "") {
+            return;
+        }
+
+        const commentText = document.createElement("p");
+
+        commentText.classList.add("reel-user-comment");
 
         commentText.innerHTML = "<strong>You</strong> " + comment;
 

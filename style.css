@@ -323,10 +323,9 @@ main {
     cursor: pointer;
 }
 
-.reel-comment-box+p {
+.reel-user-comment {
     background-color: white;
     color: black;
     padding: 10px 12px;
     margin: 0;
 }
-
