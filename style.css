@@ -284,3 +284,49 @@ main {
 .reel-info p {
     margin: 0;
 }
+
+.reel-actions {
+    display: flex;
+    gap: 15px;
+    padding: 12px;
+    background: white;
+}
+
+.reel-actions button {
+    border: none;
+    background: none;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.reel-comment-box {
+    display: flex;
+    padding: 10px;
+    background-color: white;
+    border-top: 1px solid #eee;
+}
+
+.reel-comment-box input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 8px;
+    background-color: white;
+    color: black;
+}
+
+.reel-comment-box button {
+    border: none;
+    background: white;
+    color: #0095f6;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.reel-comment-box+p {
+    background-color: white;
+    color: black;
+    padding: 10px 12px;
+    margin: 0;
+}
+

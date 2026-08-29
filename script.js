@@ -81,13 +81,50 @@ const storyViewer = document.getElementById("storyViewer");
 const storyImage = document.getElementById("storyImage");
 const closeStory = document.getElementById("closeStory");
 
-stories.forEach(function(story) {
-    story.addEventListener("click", function() {
+stories.forEach(function (story) {
+    story.addEventListener("click", function () {
         storyViewer.style.display = "flex";
         storyImage.src = story.src;
     });
 });
 
-closeStory.addEventListener("click", function() {
+closeStory.addEventListener("click", function () {
     storyViewer.style.display = "none";
+});
+
+const reelLikeButton = document.querySelector(".reel-actions button:first-child");
+
+reelLikeButton.addEventListener("click", function () {
+
+    if (reelLikeButton.classList.contains("liked")) {
+        reelLikeButton.innerHTML = "🤍";
+        reelLikeButton.classList.remove("liked");
+    } else {
+        reelLikeButton.innerHTML = "❤️";
+        reelLikeButton.classList.add("liked");
+    }
+
+});
+
+const reelCommentBox = document.querySelector(".reel-comment-box");
+
+const reelInput = reelCommentBox.querySelector("input");
+const reelPostButton = reelCommentBox.querySelector("button");
+
+reelPostButton.addEventListener("click", function () {
+
+    const comment = reelInput.value.trim();
+
+    if (comment === "") {
+        return;
+    }
+
+    const commentText = document.createElement("p");
+
+    commentText.innerHTML = "<strong>You</strong> " + comment;
+
+    reelCommentBox.before(commentText);
+
+    reelInput.value = "";
+
 });
