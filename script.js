@@ -128,3 +128,9 @@ reelPostButton.addEventListener("click", function () {
     reelInput.value = "";
 
 });
+
+const shareButton = document.querySelector(".share-btn");
+
+shareButton.addEventListener("click", function () {
+    alert("Reel shared successfully! 📤");
+});
