@@ -226,3 +226,13 @@ profileFollowBtn.addEventListener("click", function () {
 
     followersText.innerText = followers;
 });
+
+const profileNav = document.querySelector("nav li:last-child");
+const profileSection = document.querySelector(".profile-section");
+
+profileNav.addEventListener("click", function () {
+    profileSection.scrollIntoView({
+        behavior: "smooth"
+    });
+});
+

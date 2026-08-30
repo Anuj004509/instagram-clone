@@ -441,3 +441,13 @@ nav li {
     background: #e5e5e5;
     color: black;
 }
+
+.profile-stat {
+    cursor: pointer;
+    padding: 8px 15px;
+    border-radius: 8px;
+}
+
+.profile-stat.active {
+    background-color: #f0f0f0;
+}
