@@ -76,12 +76,24 @@ followButtons.forEach(function (button) {
 
     button.addEventListener("click", function () {
 
+        const followersText = document.querySelector(".profile-stats span:nth-child(2) strong");
+        let followers = Number(followersText.innerText);
+
         if (button.classList.contains("following")) {
+
             button.innerHTML = "Follow";
             button.classList.remove("following");
+
+            followers--;
+            followersText.innerText = followers;
+
         } else {
+
             button.innerHTML = "Following";
             button.classList.add("following");
+
+            followers++;
+            followersText.innerText = followers;
         }
 
     });
@@ -163,4 +175,54 @@ const shareButton = document.querySelector(".share-btn");
 
 shareButton.addEventListener("click", function () {
     alert("Reel shared successfully! 📤");
+});
+
+const editProfileBtn = document.querySelector(".edit-profile-btn");
+const editProfileForm = document.querySelector(".edit-profile-form");
+
+editProfileBtn.addEventListener("click", function () {
+    editProfileForm.style.display = "flex";
+});
+
+const saveProfileBtn = document.querySelector("#saveProfileBtn");
+
+saveProfileBtn.addEventListener("click", function () {
+
+    const newUsername = document.querySelector("#editUsername").value.trim();
+    const newBio = document.querySelector("#editBio").value.trim();
+
+    if (newUsername !== "") {
+        document.querySelector(".profile-header h2").textContent = newUsername;
+    }
+
+    if (newBio !== "") {
+        document.querySelector(".profile-header p").textContent = newBio;
+    }
+
+    document.querySelector("#editUsername").value = "";
+    document.querySelector("#editBio").value = "";
+
+    document.querySelector(".edit-profile-form").style.display = "none";
+});
+
+const profileFollowBtn = document.querySelector(".profile-follow-btn");
+
+profileFollowBtn.addEventListener("click", function () {
+
+    const followersText = document.querySelector(".profile-stats span:nth-child(2) strong");
+    let followers = Number(followersText.innerText);
+
+    if (profileFollowBtn.classList.contains("following")) {
+        profileFollowBtn.innerText = "Follow";
+        profileFollowBtn.classList.remove("following");
+
+        followers--;
+    } else {
+        profileFollowBtn.innerText = "Following";
+        profileFollowBtn.classList.add("following");
+
+        followers++;
+    }
+
+    followersText.innerText = followers;
 });
